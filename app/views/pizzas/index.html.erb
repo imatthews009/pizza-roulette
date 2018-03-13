@@ -1,0 +1,6 @@
+<h1>Yo</h1>
+<%= simple_form_for @pizza do |f| %>
+  <%= f.simple_fields_for :ingredients do |i| %>
+    <%= i.collection_check_boxes :name, @ingredients.where(category: :toppings).map(&:name), :itself, :itself %>
+  <% end %>
+<% end %>
